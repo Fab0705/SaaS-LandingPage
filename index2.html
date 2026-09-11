@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockVision - Automatización e Inventario Inteligente para tu Comercio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cobalt: {
+                            50: '#f0f4fa',
+                            100: '#dce6f5',
+                            600: '#1d4ed8',
+                            700: '#0047AB', // Color primario del proyecto
+                            800: '#003580',
+                        },
+                        vibrantOrange: {
+                            50: '#fff5ed',
+                            500: '#FF7A00',
+                            600: '#FF6600', // Color de botón del proyecto
+                            700: '#E05500',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased">
+
+    <!-- Encabezado / Navegación -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <div class="flex items-center gap-2">
+                    <!-- Icono representativo de StockVision -->
+                    <svg class="w-8 h-8 text-cobalt-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path>
+                    </svg>
+                    <span class="text-xl font-extrabold tracking-tight text-cobalt-700">Stock<span class="text-slate-900">Vision</span></span>
+                </div>
+                <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#beneficios" class="hover:text-cobalt-700 transition">Beneficios</a>
+                    <a href="#como-funciona" class="hover:text-cobalt-700 transition">Cómo funciona</a>
+                    <a href="#planes" class="hover:text-cobalt-700 transition">Planes</a>
+                </nav>
+                <div>
+                    <a href="#cta" class="inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 text-sm font-semibold text-white bg-vibrantOrange-600 hover:bg-vibrantOrange-700 rounded-lg shadow-sm transition-all transform hover:-translate-y-0.5">
+                        Probar gratis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="relative pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Texto del Hero -->
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-cobalt-50 text-cobalt-700 ring-1 ring-inset ring-cobalt-700/10">
+                        Control inteligente de inventario
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.1]">
+                        Anticipa las compras de tu tienda sin complicaciones
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        StockVision analiza tus ventas diarias para predecir cuándo reabastecer tus productos. Diseñado especialmente para librerías, papelerías y comercios locales.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#cta" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-bold text-white bg-vibrantOrange-600 hover:bg-vibrantOrange-700 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Iniciar prueba gratuita
+                        </a>
+                        <a href="#como-funciona" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors">
+                            Ver cómo funciona
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ilustración CSS/SVG del Dashboard -->
+                <div class="lg:col-span-6 relative">
+                    <div class="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-cobalt-100 to-indigo-50 opacity-30 blur-lg"></div>
+                    <div class="relative bg-white rounded-xl shadow-xl border border-slate-100 p-6 space-y-6">
+                        <!-- Cabecera de la simulación del panel de control -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <span class="text-xs font-medium text-slate-400">Panel de Control de Stock</span>
+                        </div>
+                        
+                        <!-- Tarjetas de datos rápidos del panel -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-lg bg-cobalt-50 border border-cobalt-100">
+                                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Demanda proyectada</p>
+                                <p class="text-2xl font-bold text-cobalt-700 mt-1">+24%</p>
+                                <span class="text-[10px] text-emerald-600 font-medium">Próximos 15 días</span>
+                            </div>
+                            <div class="p-4 rounded-lg bg-orange-50 border border-orange-100">
+                                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Alertas de compra</p>
+                                <p class="text-2xl font-bold text-vibrantOrange-600 mt-1">3 Alertas</p>
+                                <span class="text-[10px] text-vibrantOrange-600 font-semibold">Reabastecer pronto</span>
+                            </div>
+                        </div>
+
+                        <!-- Gráfico simulado con SVG -->
+                        <div class="space-y-2">
+                            <p class="text-sm font-semibold text-slate-700">Pronóstico de Stock de "Cuaderno A4"</p>
+                            <div class="h-32 bg-slate-50 rounded-lg flex items-end p-2 relative">
+                                <svg class="w-full h-full" viewBox="0 0 100 50" preserveAspectRatio="none">
+                                    <!-- Línea de tendencia -->
+                                    <path d="M0 45 Q 25 35, 50 15 T 100 48" fill="none" stroke="#0047AB" stroke-width="3" stroke-linecap="round"/>
+                                    <!-- Línea límite de seguridad -->
+                                    <line x1="0" y1="35" x2="100" y2="35" stroke="#FF6600" stroke-width="1.5" stroke-dasharray="3,3"/>
+                                </svg>
+                                <!-- Indicador visual de alerta -->
+                                <div class="absolute right-4 bottom-2 bg-vibrantOrange-600 text-white text-[9px] font-bold px-2 py-0.5 rounded shadow">
+                                    Reordenar hoy
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Beneficios principales -->
+    <section id="beneficios" class="py-16 sm:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                    Pensado para evitar la pérdida de ventas en tu tienda
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Facilitamos la toma de decisiones diarias sin que tengas que ser un experto en tecnología o analítica de datos.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Beneficio 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-lg bg-cobalt-50 text-cobalt-700 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Evita quiebres de stock</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Conoce qué productos están próximos a agotarse antes de que suceda, asegurando que tus clientes siempre encuentren lo que buscan.
+                    </p>
+                </div>
+
+                <!-- Beneficio 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-lg bg-cobalt-50 text-cobalt-700 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Predicciones automáticas</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Olvídate de las hojas de cálculo. Nuestro algoritmo analiza las tendencias de compra de tu zona para estimar la demanda futura de forma sencilla.
+                    </p>
+                </div>
+
+                <!-- Beneficio 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 rounded-lg bg-cobalt-50 text-cobalt-700 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ahorra tiempo diario</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Genera sugerencias de pedidos automáticos en un clic. Dedica menos horas al papeleo de inventario y concéntrate en atender a tu comunidad.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Cómo funciona -->
+    <section id="como-funciona" class="py-16 sm:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                    Tres pasos para recuperar el control de tu negocio
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Una experiencia intuitiva y rápida, adaptada al ritmo de trabajo diario de las tiendas físicas.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
+                
+                <!-- Paso 1 -->
+                <div class="relative flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-cobalt-700 text-white flex items-center justify-center text-xl font-bold shadow-md z-10">
+                        1
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Sube tus datos de ventas</h3>
+                    <p class="text-slate-600 max-w-sm leading-relaxed">
+                        Importa el historial de tu punto de venta habitual mediante un archivo sencillo o integración básica.
+                    </p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="relative flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-cobalt-700 text-white flex items-center justify-center text-xl font-bold shadow-md z-10">
+                        2
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">StockVision analiza y aprende</h3>
+                    <p class="text-slate-600 max-w-sm leading-relaxed">
+                        La plataforma identifica de forma automática patrones estacionales e históricos de tus productos estrella.
+                    </p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="relative flex flex-col items-center text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-cobalt-700 text-white flex items-center justify-center text-xl font-bold shadow-md z-10">
+                        3
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Recibe alertas óptimas</h3>
+                    <p class="text-slate-600 max-w-sm leading-relaxed">
+                        Recibe notificaciones sobre cuándo pedir a tus proveedores y la cantidad ideal sugerida para evitar excedentes.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección: Planes a tu medida -->
+    <section id="planes" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-semibold uppercase tracking-wider text-cobalt-700">Precios transparentes</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                    Planes a tu medida
+                </h2>
+                <p class="text-lg text-slate-600">
+                    Comienza sin costo y selecciona el nivel de automatización que tu negocio requiere.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+                
+                <!-- Plan Emprendedor -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-slate-900">Emprendedor</h3>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-6">Ideal para comercios pequeños que están digitalizando su control de stock.</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-slate-900">Gratis</span>
+                            <span class="text-slate-500 text-sm font-medium"> / 14 días</span>
+                        </div>
+
+                        <!-- Características -->
+                        <ul class="space-y-4 border-t border-slate-100 pt-6 mb-8">
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-cobalt-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                Hasta 250 productos activos
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-cobalt-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                Alertas básicas de reabastecimiento
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-cobalt-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                1 usuario de administración
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-cobalt-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                Soporte por correo electrónico
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#cta" class="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition">
+                        Iniciar prueba gratis
+                    </a>
+                </div>
+
+                <!-- Plan Pro (Destacado en Naranja Vibrante) -->
+                <div class="bg-white rounded-2xl shadow-md border-2 border-vibrantOrange-600 p-8 flex flex-col justify-between relative transform lg:-translate-y-2">
+                    <!-- Distintivo de popularidad -->
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold bg-vibrantOrange-600 text-white tracking-wide uppercase">
+                        Más Recomendado
+                    </span>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-4 mt-2">
+                            <h3 class="text-xl font-bold text-slate-900">Profesional (Pro)</h3>
+                        </div>
+                        <p class="text-slate-500 text-sm mb-6">Para tiendas en crecimiento que buscan optimizar compras y automatizar previsiones.</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-slate-900">$19</span>
+                            <span class="text-slate-500 text-sm font-medium"> / mes</span>
+                        </div>
+
+                        <!-- Características -->
+                        <ul class="space-y-4 border-t border-slate-100 pt-6 mb-8">
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-vibrantOrange-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="font-medium text-slate-900">Productos ilimitados</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-vibrantOrange-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                Predicciones avanzadas de demanda
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-vibrantOrange-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                Hasta 5 usuarios concurrentes
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-vibrantOrange-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                Integraciones con software POS local
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <svg class="w-5 h-5 text-vibrantOrange-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                Soporte técnico prioritario 24/7
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#cta" class="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-semibold text-white bg-vibrantOrange-600 hover:bg-vibrantOrange-700 rounded-xl shadow-sm transition">
+                        Comenzar plan Pro
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA de Cierre -->
+    <section id="cta" class="py-16 sm:py-20 bg-cobalt-700 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                Empieza a predecir tu inventario hoy mismo
+            </h2>
+            <p class="text-lg text-cobalt-100 max-w-2xl mx-auto">
+                Únete a los comercios locales que ya confían en StockVision para mantener sus estantes siempre al día. Sin contratos a largo plazo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-vibrantOrange-600 hover:bg-vibrantOrange-700 rounded-lg shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Iniciar prueba gratuita de 14 días
+                </a>
+            </div>
+            <p class="text-xs text-cobalt-200">
+                No se requiere tarjeta de crédito para iniciar la prueba.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-cobalt-100 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path>
+                </svg>
+                <span class="text-lg font-extrabold tracking-tight text-white">Stock<span class="text-slate-400">Vision</span></span>
+            </div>
+            <p class="text-sm">
+                &copy; 2026 StockVision. Todos los derechos reservados. Diseñado para fortalecer el comercio minorista local.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
